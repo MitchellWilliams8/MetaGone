@@ -5,6 +5,7 @@ from rich.table import Table
 
 from MetaGone.modules.image import scrub_image
 from MetaGone.modules.docx import scrub_docx
+from MetaGone.modules.pdf import scrub_pdf
 
 app = typer.Typer(
    help="MetaGone: A command line tool for removing metadata from files."
@@ -38,6 +39,8 @@ def clean(
        result = scrub_image(file_path, dest)
    elif ext == ".docx":
        result = scrub_docx(file_path, dest)
+   elif ext == ".pdf":
+       result = scrub_pdf(file_path, dest)
    else:
        console.print(
            f"[yellow]Format '{ext}' not yet supported."
