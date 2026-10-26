@@ -1,4 +1,5 @@
 from pathlib import Path
+from PIL import Image
 
 def scrub_image(src_path: Path, dest_path: Path) -> dict:
     """Sanitizes raster images by purging EXIF/XMP blocks and internal format chunks.
